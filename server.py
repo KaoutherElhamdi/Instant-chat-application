@@ -45,8 +45,7 @@ def receive():
         try :
             msg_received = conn.recv(1024).decode()
             msg_list.insert(END, "{} : {}".format(username,msg_received))
-            if msg_received.lower() == "bye":
-                top.destroy()
+            
         except OSError :
             msg_list.insert(END, "Discussion terminé")
             break
